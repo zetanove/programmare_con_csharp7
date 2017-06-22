@@ -56,8 +56,17 @@ namespace DomandeRiepilogo
             Console.WriteLine(len); //= 3 risposta c
 
             //domanda 8
-            string n = nameof(Main); // risposta a, nameof introdotto con C# 6
+            string n = nameof(Main); 
+            Console.WriteLine(n); // risposta a, nameof introdotto con C# 6
+
+            //domanda 9m pattern matching con is
+            object obj = "Hello world";
+            if (obj is string s && s.Length > 5)
+                Console.WriteLine(s.Length);
+            else Console.WriteLine(0);
+
             Console.ReadLine();
+
         }
 
         public static bool A()
