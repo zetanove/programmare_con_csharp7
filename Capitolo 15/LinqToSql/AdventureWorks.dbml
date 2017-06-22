@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AdventureWorksDW2014" Class="AdventureWorksDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=AdventureWorksDW2014;Integrated Security=True;Connect Timeout=30" SettingsObjectName="LinqToSql.Properties.Settings" SettingsPropertyName="AdventureWorksDW2014ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.DimProduct" Member="DimProducts">
+    <Type Name="DimProduct">
+      <Column Name="ProductKey" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductAlternateKey" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="ProductSubcategoryKey" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WeightUnitMeasureCode" Type="System.String" DbType="NChar(3)" CanBeNull="true" />
+      <Column Name="SizeUnitMeasureCode" Type="System.String" DbType="NChar(3)" CanBeNull="true" />
+      <Column Name="EnglishProductName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SpanishProductName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FrenchProductName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="StandardCost" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="FinishedGoodsFlag" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Color" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="SafetyStockLevel" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ReorderPoint" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ListPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Size" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SizeRange" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Weight" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DaysToManufacture" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductLine" Type="System.String" DbType="NChar(2)" CanBeNull="true" />
+      <Column Name="DealerPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Class" Type="System.String" DbType="NChar(2)" CanBeNull="true" />
+      <Column Name="Style" Type="System.String" DbType="NChar(2)" CanBeNull="true" />
+      <Column Name="ModelName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LargePhoto" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="EnglishDescription" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="FrenchDescription" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="ChineseDescription" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="ArabicDescription" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="HebrewDescription" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="ThaiDescription" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="GermanDescription" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="JapaneseDescription" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="TurkishDescription" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(7)" CanBeNull="true" />
+      <Association Name="DimProductSubcategory_DimProduct" Member="DimProductSubcategory" ThisKey="ProductSubcategoryKey" OtherKey="ProductSubcategoryKey" Type="DimProductSubcategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DimProductCategory" Member="DimProductCategories">
+    <Type Name="DimProductCategory">
+      <Column Name="ProductCategoryKey" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductCategoryAlternateKey" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EnglishProductCategoryName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SpanishProductCategoryName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FrenchProductCategoryName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="DimProductCategory_DimProductSubcategory" Member="DimProductSubcategories" ThisKey="ProductCategoryKey" OtherKey="ProductCategoryKey" Type="DimProductSubcategory" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DimProductSubcategory" Member="DimProductSubcategories">
+    <Type Name="DimProductSubcategory">
+      <Column Name="ProductSubcategoryKey" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductSubcategoryAlternateKey" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EnglishProductSubcategoryName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SpanishProductSubcategoryName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FrenchProductSubcategoryName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductCategoryKey" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DimProductSubcategory_DimProduct" Member="DimProducts" ThisKey="ProductSubcategoryKey" OtherKey="ProductSubcategoryKey" Type="DimProduct" />
+      <Association Name="DimProductCategory_DimProductSubcategory" Member="DimProductCategory" ThisKey="ProductCategoryKey" OtherKey="ProductCategoryKey" Type="DimProductCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
