@@ -24,7 +24,7 @@ namespace IsPatternMatching
             //equivalente a 
             if (obj is string)
             {
-                string s = (string) obj;
+                string s = (string)obj;
                 Console.WriteLine($"lunghezza {s.Length}");
             }
 
@@ -38,7 +38,7 @@ namespace IsPatternMatching
 
             //var pattern
 
-            MyClass mc=new MyClass();
+            MyClass mc = new MyClass();
             test = mc.IsValid(2);
 
             if (rand.Next() < 100)
@@ -56,19 +56,13 @@ namespace IsPatternMatching
 
             Console.ReadLine();
         }
-            
-           
     }
 
 
     public class MyClass
     {
-        private int[] invalidValues = { 1, 4, 7, 9};
+        private int[] invalidValues = { 1, 4, 7, 9 };
 
-    public override bool Equals(object obj)
-        {
-            return base.Equals(obj);
-        }
 
         public bool IsValid(int value)
         {
@@ -76,14 +70,14 @@ namespace IsPatternMatching
             {
                 case var validValue when (!invalidValues.Contains(value)):
                     return true;
-                    
+
                 case var invalidValue when (invalidValues.Contains(value)):
                     return false;
-                    
+
                 default:
                     return false;
-                    
+
             }
         }
-}
+    }
 }
