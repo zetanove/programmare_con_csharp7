@@ -17,16 +17,11 @@ namespace Indexer
         //contiene una rubrica di 10 numeri!
         private TelephoneNumber[] numeri = new TelephoneNumber[10];
 
+        //implementazione indicizzatori con espr corpo
         public TelephoneNumber this[int index]
         {
-            get
-            {
-                return numeri[index];
-            }
-            set
-            {
-                numeri[index] = value;
-            }
+            get => numeri[index];
+            set => numeri[index] = value;
         }
 
         public TelephoneNumber this[string nome]
