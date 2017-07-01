@@ -15,6 +15,10 @@ namespace TupleLiteral
             Coordinate coord = new Coordinate("Roma", 41.891930, 12.5113300);
 
             var (città, lat, lon) = coord;
+
+            (char inizio, char fine, int lunghezza) = "Hello World";
+
+            (inizio, fine, lunghezza) = "";
         }
     }
 
@@ -39,4 +43,13 @@ namespace TupleLiteral
         }
     }
 
+    public static class Extensions
+    {
+        public static void Deconstruct(this string s, out char first, out char last, out int length)
+        {
+            first = s.FirstOrDefault();
+            last = s.LastOrDefault();
+            length=s.Length;
+        }
+    }
 }

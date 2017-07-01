@@ -21,6 +21,7 @@ namespace IstruzioneSwitch
             int num = 1;
             switch (num )
             {
+                
                 case 1:
                     
                     b = false;
@@ -37,6 +38,7 @@ namespace IstruzioneSwitch
                     break;
                 case "A":
                     break;
+
             }
 
             //fall through

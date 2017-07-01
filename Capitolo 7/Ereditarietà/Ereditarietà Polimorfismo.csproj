@@ -44,7 +44,6 @@
     <Compile Include="AbstractClassesInterface.cs" />
     <Compile Include="Airplane.cs" />
     <Compile Include="Car.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="ExplicitImplicitInterface.cs" />
     <Compile Include="FlyingVehicle.cs" />
     <Compile Include="ICruiseControl.cs" />

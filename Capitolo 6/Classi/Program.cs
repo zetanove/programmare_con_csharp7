@@ -26,6 +26,9 @@ namespace Classi
             
         }
 
+        //expression body in costruttore
+        public SmartPhone(string m) => Marca = Modello = m;
+
         public class Battery
         {
             Battery()

@@ -4,6 +4,8 @@
  * Capitolo 6: indicizzatori
  */
 
+using System.Collections.Generic;
+
 namespace Indexer
 {
     public class Smartphone
@@ -14,9 +16,12 @@ namespace Indexer
             public int Number { get; set; }
         }
 
+        
+
         //contiene una rubrica di 10 numeri!
         private TelephoneNumber[] numeri = new TelephoneNumber[10];
-
+        
+        
         //implementazione indicizzatori con espr corpo
         public TelephoneNumber this[int index]
         {

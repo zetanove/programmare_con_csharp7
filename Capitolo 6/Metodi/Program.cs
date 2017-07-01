@@ -109,6 +109,9 @@ namespace Metodi
 
             Ricorsione ric = new Ricorsione();
             var fatt=ric.Fattoriale(5);
+
+            LocalFunction lf = new LocalFunction();
+            lf.Demo();
             Console.WriteLine(fatt);
         }
     }
