@@ -724,7 +724,7 @@ namespace LinqToSql
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LargePhoto", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LargePhoto", DbType="VarBinary(MAX)", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary LargePhoto
 		{
 			get
