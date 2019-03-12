@@ -1,4 +1,4 @@
-﻿//Esempio di programma C# per il libro Programmare con C# 6
+﻿//Esempio di programma C# per il libro Programmare con C# 7
 using System;
 
 namespace HelloWorld
