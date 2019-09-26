@@ -27,8 +27,10 @@ namespace ParallelQuery
             var list1 = Enumerable.Range(1, 1000).ToList();
             var list2 = Enumerable.Range(500, 1500).ToList();
 
-            var q2 = list1.AsParallel().Union(list2.AsParallel()).AsOrdered();
+            var q2 = list1.AsParallel().Union(list2.AsParallel().AsOrdered());
             q2.ToList().ForEach(n => Console.WriteLine(n));
+
+            Console.WriteLine("Premi un tasto...");
             Console.ReadLine();
         }
     }
